@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: false}));
 
 app.get('/', async(req, res) => {
     let article = await Article.find().sort({createdAt: "desc"});
-    res.render("articles/index", {article: article});
+    res.render("index", {article: article});
 })
 
 app.use("/articles", articleRouter);
