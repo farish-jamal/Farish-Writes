@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6y_i9ioImCChYMYXi8MXWIT6umfgRFHHbHk3tlGbaUX66J5ZzImP6SJA8F1jWOXU9cE8&usqp=CAU" type="image/x-icon">
+    <title>Farish Jamal - Nodejs, React</title>
+</head>
+<body>
+    <div style="box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.658)">
+        <div class="header d-flex align-items-center justify-content-between py-1 container">
+            <div class="text-light">
+                <h1 class="h3" style="color: black;">Farish Writes</h1>
+                <p class="text-muted" style="font-size: 12px">I Write What I Feel</p>
+            </div>
+            <a href="/articles/new"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6y_i9ioImCChYMYXi8MXWIT6umfgRFHHbHk3tlGbaUX66J5ZzImP6SJA8F1jWOXU9cE8&usqp=CAU" alt="Profile" style="width: 50px; border-radius: 50%;">
+            </a>
+        </div>
+    </div>
+    <div class="container mt-4" style="align-items: center; flex-wrap:wrap; display: flex;">
+        <% article.forEach(article => { %>
+            <a href="/articles/<%= article.id %>" style="text-decoration: none; color: black;"><div class="card my-4 mx-4" style="width: 320px;">
+                <img src=<%= article.imgUrl %>  class="card-img-top" alt="..." style="height: 200px">
+                <div class="card-body">
+                  <h5 class="card-title"><%= article.title.substring(0, 50) %> ...</h5>
+                  <p class="text-muted"><%= article.createdAt.toLocaleString() %></p>
+                  <p class="card-text"><%= article.title %></p>
+                  <a href="/articles/<%= article.id %> " class="btn btn-success mt-3">Read Full Article</a>
+                </div>
+              </div>
+            </a>
+        <% }) %> 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
