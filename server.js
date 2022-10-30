@@ -17,6 +17,4 @@ app.get('/', async(req, res) => {
 
 app.use("/articles", articleRouter);
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Example app listening on port");
-})
+app.listen(process.env.PORT || 3000);
